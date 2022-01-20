@@ -19,6 +19,7 @@
 		49C5B3C42799548F00C1A8E0 /* LoginModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C5B3BE2799548F00C1A8E0 /* LoginModels.swift */; };
 		49C5B3C52799548F00C1A8E0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C5B3BF2799548F00C1A8E0 /* LoginViewController.swift */; };
 		49C5B3C62799548F00C1A8E0 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C5B3C02799548F00C1A8E0 /* LoginInteractor.swift */; };
+		49C5B3C82799983600C1A8E0 /* LoginConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C5B3C72799983600C1A8E0 /* LoginConfigurator.swift */; };
 		A1D36BA74EB3D127BD24D1F5 /* Pods_ApplicationChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B330868D5803D2687F01E69 /* Pods_ApplicationChallenge.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		49C5B3BE2799548F00C1A8E0 /* LoginModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModels.swift; sourceTree = "<group>"; };
 		49C5B3BF2799548F00C1A8E0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		49C5B3C02799548F00C1A8E0 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		49C5B3C72799983600C1A8E0 /* LoginConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginConfigurator.swift; sourceTree = "<group>"; };
 		6BDB292FAFB9052487D20F56 /* Pods_ApplicationChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApplicationChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B330868D5803D2687F01E69 /* Pods_ApplicationChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApplicationChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F2E6BEA5646492E0FD8680C /* Pods-ApplicationChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplicationChallenge.debug.xcconfig"; path = "Target Support Files/Pods-ApplicationChallenge/Pods-ApplicationChallenge.debug.xcconfig"; sourceTree = "<group>"; };
@@ -99,7 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				49C5B3892799525100C1A8E0 /* AppDelegate.swift */,
-				49C5B3B92799545200C1A8E0 /* Scene */,
+				49C5B3B92799545200C1A8E0 /* Scenes */,
 				49C5B38F2799525100C1A8E0 /* Main.storyboard */,
 				49C5B3922799525300C1A8E0 /* Assets.xcassets */,
 				49C5B3942799525300C1A8E0 /* LaunchScreen.storyboard */,
@@ -116,17 +118,18 @@
 			path = ApplicationChallengeTests;
 			sourceTree = "<group>";
 		};
-		49C5B3B92799545200C1A8E0 /* Scene */ = {
+		49C5B3B92799545200C1A8E0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
 				49C5B3BA2799545E00C1A8E0 /* Login */,
 			);
-			path = Scene;
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		49C5B3BA2799545E00C1A8E0 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				49C5B3C72799983600C1A8E0 /* LoginConfigurator.swift */,
 				49C5B3C02799548F00C1A8E0 /* LoginInteractor.swift */,
 				49C5B3BE2799548F00C1A8E0 /* LoginModels.swift */,
 				49C5B3BB2799548F00C1A8E0 /* LoginPresenter.swift */,
@@ -145,7 +148,6 @@
 				16E2C015B89D26E9C3B64A13 /* Pods-ApplicationChallengeTests.debug.xcconfig */,
 				D3EA414593106533F29B7E3F /* Pods-ApplicationChallengeTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -315,6 +317,7 @@
 				49C5B3C32799548F00C1A8E0 /* LoginRouter.swift in Sources */,
 				49C5B3C52799548F00C1A8E0 /* LoginViewController.swift in Sources */,
 				49C5B38A2799525100C1A8E0 /* AppDelegate.swift in Sources */,
+				49C5B3C82799983600C1A8E0 /* LoginConfigurator.swift in Sources */,
 				49C5B3C62799548F00C1A8E0 /* LoginInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

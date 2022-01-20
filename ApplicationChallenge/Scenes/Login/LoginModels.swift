@@ -9,16 +9,10 @@
 import Foundation
 
 enum Login {
-    // MARK: Use cases
     
-    enum Something {
+    enum Username {
         struct Request {
-        }
-        
-        struct Response {
-        }
-        
-        struct ViewModel {
+            let username: String
         }
     }
 }
