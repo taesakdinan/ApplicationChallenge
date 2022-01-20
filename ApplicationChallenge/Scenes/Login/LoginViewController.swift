@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
     @IBOutlet private weak var usernameTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
     @IBOutlet private weak var countryTextField: UITextField!
+    var coordinator: AppCoordinatable?
     var interactor: LoginBusinessLogic?
     var router: (NSObjectProtocol & LoginRoutingLogic & LoginDataPassing)?
     
@@ -24,7 +25,6 @@ class LoginViewController: UIViewController {
         super.awakeFromNib()
         LoginConfigurator.configure(viewController: self)
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,7 +73,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction private func LoginPressed() {
-        interactor?.userActionOccured(userAction: .loginPressed)
+//        interactor?.userActionOccured(userAction: .loginPressed)
     }
 }
 // MARK: - LoginDisplayLogic
