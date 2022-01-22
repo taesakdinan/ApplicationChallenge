@@ -15,6 +15,12 @@ enum UserInfo {
         }
         typealias ViewModel = Response
     }
+    enum Alert {
+        struct ViewModel {
+            let title: String
+            let message: String
+        }
+    }
     enum UserInfo {
         struct Response {
             let users: [User]

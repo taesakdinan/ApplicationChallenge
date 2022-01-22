@@ -11,7 +11,9 @@ import Parchment
 
 protocol UserInfoDisplayLogic: AnyObject {
     func displayLoading(viewModel: UserInfo.Loading.ViewModel)
+    func displayAlert(viewModel: UserInfo.Alert.ViewModel)
     func displayUsersInfo(viewModel: UserInfo.UserInfo.ViewModel)
+    func closeApplication()
 }
 
 class UserInfoViewController: UIViewController {
@@ -70,8 +72,27 @@ extension UserInfoViewController: UserInfoDisplayLogic {
         }
     }
     
+    func displayAlert(viewModel: UserInfo.Alert.ViewModel) {
+        let alert = UIAlertController(title: viewModel.title, message: viewModel.message, preferredStyle: .alert)
+        let close = UIAlertAction(title: "Close", style: .destructive) { [weak self] _ in
+            guard let self = self, let interactor = self.interactor else { return }
+            interactor.userActionOccured(userAction: .closeApplitionPressed)
+        }
+        let retry = UIAlertAction(title: "Retry", style: .default) { [weak self] _ in
+            guard let self = self, let interactor = self.interactor else { return }
+            interactor.userActionOccured(userAction: .retryPressed)
+        }
+        alert.addAction(close)
+        alert.addAction(retry)
+        present(alert, animated: true)
+    }
+    
     func displayUsersInfo(viewModel: UserInfo.UserInfo.ViewModel) {
         dataList = viewModel.users
+    }
+    
+    func closeApplication() {
+        exit(0)
     }
 }
 

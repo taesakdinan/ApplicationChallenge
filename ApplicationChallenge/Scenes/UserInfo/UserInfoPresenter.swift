@@ -11,6 +11,8 @@ import UIKit
 protocol UserInfoPresentationLogic {
     func presentLoading(response: UserInfo.Loading.Response)
     func presentUserInfo(response: UserInfo.UserInfo.Response)
+    func presentAlert()
+    func closeApplication()
 }
 
 class UserInfoPresenter: UserInfoPresentationLogic {
@@ -24,5 +26,14 @@ class UserInfoPresenter: UserInfoPresentationLogic {
     func presentUserInfo(response: UserInfo.UserInfo.Response) {
         let viewModel = UserInfo.UserInfo.ViewModel(users: response.users)
         viewController?.displayUsersInfo(viewModel: viewModel)
+    }
+    
+    func presentAlert() {
+        let viewModel = UserInfo.Alert.ViewModel(title: "Fail", message: "Something went wrong, please try again")
+        viewController?.displayAlert(viewModel: viewModel)
+    }
+    
+    func closeApplication() {
+        viewController?.closeApplication()
     }
 }
