@@ -12,6 +12,7 @@ protocol LoginPresentationLogic {
     func presentAlert(response: Login.Alert.Response)
     func presentCountry(response: Login.Country.Response)
     func presentCountryList()
+    func presentDetailScene()
     func clearPassword()
 }
 
@@ -31,6 +32,10 @@ class LoginPresenter: LoginPresentationLogic {
     
     func presentCountryList() {
         viewController?.displayCountryList()
+    }
+    
+    func presentDetailScene() {
+        viewController?.displayDetailScene()
     }
     
     func clearPassword() {

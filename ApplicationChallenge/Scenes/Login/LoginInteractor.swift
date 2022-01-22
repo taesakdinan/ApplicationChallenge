@@ -33,6 +33,7 @@ extension LoginInteractor: LoginBusinessLogic {
     func userActionOccured(userAction: LoginUserAction) {
         switch userAction {
         case .selectCountry:
+            handleOnSelectedCountry()
             prepareCountryListData()
             presenter?.presentCountryList()
         case .loginPressed(let request):
@@ -45,8 +46,6 @@ extension LoginInteractor: LoginBusinessLogic {
     
     func viewControllerStateChanged(state: ViewControllerState) {
         switch state {
-        case .viewDidLoad:
-            handleOnSelectedCountry()
         default: break
         }
     }
@@ -74,8 +73,7 @@ private extension LoginInteractor {
     func handleValidateResult(_ result: LoginWorkerResult.ValidateData) {
         switch result {
         case .valid:
-            // TODO: presenter next scene
-            break
+            presenter?.presentDetailScene()
         case .shortUsernameAndPassword:
             let reponse = Login.Alert.Response(message: AlertMessage.shortUsernameAndPassword.message)
             presenter?.presentAlert(response: reponse)

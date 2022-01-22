@@ -18,6 +18,11 @@
 		4989BA39279B193700B5310B /* CountryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA37279B193700B5310B /* CountryPickerViewController.swift */; };
 		4989BA3A279B193700B5310B /* CountryPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4989BA38279B193700B5310B /* CountryPickerViewController.xib */; };
 		4989BA3D279BD26600B5310B /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA3C279BD26600B5310B /* AppConstants.swift */; };
+		4989BA40279BE17800B5310B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA3F279BE17800B5310B /* User.swift */; };
+		4989BA42279BE18500B5310B /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA41279BE18500B5310B /* Address.swift */; };
+		4989BA44279BE19900B5310B /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA43279BE19900B5310B /* Company.swift */; };
+		4989BA4C279BE95A00B5310B /* LoginInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA48279BE95A00B5310B /* LoginInteractorTests.swift */; };
+		4989BA4E279BE95A00B5310B /* LoginPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA4A279BE95A00B5310B /* LoginPresenterTests.swift */; };
 		49C5B38A2799525100C1A8E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C5B3892799525100C1A8E0 /* AppDelegate.swift */; };
 		49C5B3912799525100C1A8E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49C5B38F2799525100C1A8E0 /* Main.storyboard */; };
 		49C5B3932799525300C1A8E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49C5B3922799525300C1A8E0 /* Assets.xcassets */; };
@@ -55,6 +60,11 @@
 		4989BA37279B193700B5310B /* CountryPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerViewController.swift; sourceTree = "<group>"; };
 		4989BA38279B193700B5310B /* CountryPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryPickerViewController.xib; sourceTree = "<group>"; };
 		4989BA3C279BD26600B5310B /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		4989BA3F279BE17800B5310B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4989BA41279BE18500B5310B /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		4989BA43279BE19900B5310B /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		4989BA48279BE95A00B5310B /* LoginInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorTests.swift; sourceTree = "<group>"; };
+		4989BA4A279BE95A00B5310B /* LoginPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTests.swift; sourceTree = "<group>"; };
 		49C5B3862799525100C1A8E0 /* ApplicationChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApplicationChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49C5B3892799525100C1A8E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49C5B3902799525100C1A8E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -143,6 +153,33 @@
 			path = Configs;
 			sourceTree = "<group>";
 		};
+		4989BA3E279BE14300B5310B /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				4989BA41279BE18500B5310B /* Address.swift */,
+				4989BA43279BE19900B5310B /* Company.swift */,
+				4989BA3F279BE17800B5310B /* User.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		4989BA45279BE93800B5310B /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				4989BA46279BE94700B5310B /* Login */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		4989BA46279BE94700B5310B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4989BA48279BE95A00B5310B /* LoginInteractorTests.swift */,
+				4989BA4A279BE95A00B5310B /* LoginPresenterTests.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		49C5B37D2799525100C1A8E0 = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +209,7 @@
 				49C5B3942799525300C1A8E0 /* LaunchScreen.storyboard */,
 				49C5B38F2799525100C1A8E0 /* Main.storyboard */,
 				4989BA3B279BD23D00B5310B /* Configs */,
+				4989BA3E279BE14300B5310B /* Entities */,
 				4989BA1A279AD24600B5310B /* Views */,
 				4989BA33279B12B900B5310B /* Presentation */,
 				49C5B3B92799545200C1A8E0 /* Scenes */,
@@ -183,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				49C5B3A02799525400C1A8E0 /* ApplicationChallengeTests.swift */,
+				4989BA45279BE93800B5310B /* Scenes */,
 			);
 			path = ApplicationChallengeTests;
 			sourceTree = "<group>";
@@ -403,8 +442,10 @@
 				4989BA35279B12D800B5310B /* Sceneable.swift in Sources */,
 				4989BA3D279BD26600B5310B /* AppConstants.swift in Sources */,
 				4989BA2F279AEC4200B5310B /* DetailRouter.swift in Sources */,
+				4989BA44279BE19900B5310B /* Company.swift in Sources */,
 				4989BA31279AEC4200B5310B /* DetailViewController.swift in Sources */,
 				49C5B3C22799548F00C1A8E0 /* LoginWorker.swift in Sources */,
+				4989BA42279BE18500B5310B /* Address.swift in Sources */,
 				4989BA39279B193700B5310B /* CountryPickerViewController.swift in Sources */,
 				4989BA32279AEC4200B5310B /* DetailInteractor.swift in Sources */,
 				49C5B3C12799548F00C1A8E0 /* LoginPresenter.swift in Sources */,
@@ -414,6 +455,7 @@
 				49C5B3C52799548F00C1A8E0 /* LoginViewController.swift in Sources */,
 				49C5B38A2799525100C1A8E0 /* AppDelegate.swift in Sources */,
 				49C5B3C82799983600C1A8E0 /* LoginConfigurator.swift in Sources */,
+				4989BA40279BE17800B5310B /* User.swift in Sources */,
 				4989BA2D279AEC4200B5310B /* DetailPresenter.swift in Sources */,
 				49C5B3C62799548F00C1A8E0 /* LoginInteractor.swift in Sources */,
 				4989BA2E279AEC4200B5310B /* DetailWorker.swift in Sources */,
@@ -424,7 +466,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4989BA4C279BE95A00B5310B /* LoginInteractorTests.swift in Sources */,
 				49C5B3A12799525400C1A8E0 /* ApplicationChallengeTests.swift in Sources */,
+				4989BA4E279BE95A00B5310B /* LoginPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
