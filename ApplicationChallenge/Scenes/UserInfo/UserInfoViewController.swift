@@ -18,15 +18,15 @@ protocol UserInfoDisplayLogic: AnyObject {
 }
 
 class UserInfoViewController: UIViewController, UserInfoDisplayLogic {
-    var interactor: UserInfoBusinessLogic?
-    var router: (NSObjectProtocol & UserInfoRoutingLogic & UserInfoDataPassing)?
-    
     
     class func instantiateViewController() -> UserInfoViewController {
         let storyboard = UIStoryboard(name: "UserInfo", bundle: nil)
         let destinationVC = storyboard.instantiateViewController(withIdentifier: "UserInfoViewController") as! UserInfoViewController
         return destinationVC
     }
+    
+    var interactor: UserInfoBusinessLogic?
+    var router: (NSObjectProtocol & UserInfoRoutingLogic & UserInfoDataPassing)?
     
     // MARK: - View lifecycle
     override func awakeFromNib() {
@@ -37,8 +37,8 @@ class UserInfoViewController: UIViewController, UserInfoDisplayLogic {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let firstViewController = UIViewController()
-         let secondViewController = UIViewController()
+        let firstViewController = UserInfoDetailViewController.instantiateViewController()
+         let secondViewController = UserInfoDetailViewController.instantiateViewController()
         let pagingViewController = PagingViewController(viewControllers: [
           firstViewController,
           secondViewController

@@ -8,10 +8,14 @@
 
 import UIKit
 
+protocol LoginCoordinatable {
+    func showCountryPicker(dataList: [String], onSelected: ((_ index: Int?) -> Void)?)
+    func showuserInfo()
+}
+
 class LoginCoordinator: Coordinator {
+    var onFinishFlow: (() -> Void)?
     private var navigationController: UINavigationController?
-    
-    public var onFinishFlow: (() -> Void)?
     
     init(navigationController: UINavigationController?) {
         self.navigationController = navigationController
@@ -19,6 +23,23 @@ class LoginCoordinator: Coordinator {
     
     override func start() {
         let destinationVC = LoginViewController.instantiateViewController()
+        destinationVC.coordinator = self
         navigationController?.setViewControllers([destinationVC], animated: true)
+    }
+}
+
+extension LoginCoordinator: LoginCoordinatable {
+    func showCountryPicker(dataList: [String], onSelected: ((_ index: Int?) -> Void)?) {
+        let destinationVC = CountryPickerViewController.instantiateViewController()
+        destinationVC.dataList = dataList
+        destinationVC.onSelected = onSelected
+        let newNav = UINavigationController()
+        newNav.modalPresentationStyle = .overFullScreen
+        newNav.pushViewController(destinationVC, animated: true)
+        navigationController?.present(newNav, animated: true)
+    }
+    
+    func showuserInfo() {
+        onFinishFlow?()
     }
 }

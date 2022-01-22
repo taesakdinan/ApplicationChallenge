@@ -22,6 +22,17 @@ class AppCoordinator: Coordinator {
     
     private func startLoginScene() {
         let coor = LoginCoordinator(navigationController: navigationController)
+        coor.onFinishFlow = { [weak self, weak coor] in
+            guard let self = self, let coor = coor else { return }
+            self.remove(childCoordinator: coor)
+            self.startUserInfo()
+        }
+        add(childCoordinator: coor)
+        coor.start()
+    }
+    
+    private func startUserInfo() {
+        let coor = UserInfoCoordinator(navigationController: navigationController)
         add(childCoordinator: coor)
         coor.start()
     }

@@ -27,13 +27,11 @@ class LoginRouter: NSObject, LoginDataPassing {
 extension LoginRouter: LoginRoutingLogic {
     func navigateToCountryList() {
         guard let dataStore = dataStore else { return }
-        let destinationVC = CountryPickerViewController.instantiateViewController()
-        destinationVC.dataList = dataStore.countryList
-        destinationVC.onSelected = dataStore.onSelectedCountry
-        viewController?.present(destinationVC, animated: true)
+        viewController?.coordinator?.showCountryPicker(dataList: dataStore.countryList,
+                                                       onSelected: dataStore.onSelectedCountry)
     }
     
     func navigateToDetailScene() {
-        // TODO: implement
+        viewController?.coordinator?.showuserInfo()
     }
 }

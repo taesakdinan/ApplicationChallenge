@@ -29,6 +29,9 @@
 		4989BA6A279C05F700B5310B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA69279C05F700B5310B /* AppCoordinator.swift */; };
 		4989BA6C279C092C00B5310B /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4989BA6B279C092B00B5310B /* Login.storyboard */; };
 		4989BA6E279C0AE500B5310B /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA6D279C0AE500B5310B /* LoginCoordinator.swift */; };
+		4989BA70279C103200B5310B /* UserInfoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA6F279C103200B5310B /* UserInfoCoordinator.swift */; };
+		4989BA73279C257300B5310B /* UserInfoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA72279C257300B5310B /* UserInfoDetailViewController.swift */; };
+		4989BA79279C27B900B5310B /* UserInfoDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4989BA78279C27B900B5310B /* UserInfoDetailViewController.storyboard */; };
 		49C5B38A2799525100C1A8E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C5B3892799525100C1A8E0 /* AppDelegate.swift */; };
 		49C5B3912799525100C1A8E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49C5B38F2799525100C1A8E0 /* Main.storyboard */; };
 		49C5B3932799525300C1A8E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49C5B3922799525300C1A8E0 /* Assets.xcassets */; };
@@ -77,6 +80,9 @@
 		4989BA69279C05F700B5310B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		4989BA6B279C092B00B5310B /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		4989BA6D279C0AE500B5310B /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		4989BA6F279C103200B5310B /* UserInfoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoCoordinator.swift; sourceTree = "<group>"; };
+		4989BA72279C257300B5310B /* UserInfoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoDetailViewController.swift; sourceTree = "<group>"; };
+		4989BA78279C27B900B5310B /* UserInfoDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserInfoDetailViewController.storyboard; sourceTree = "<group>"; };
 		49C5B3862799525100C1A8E0 /* ApplicationChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApplicationChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49C5B3892799525100C1A8E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49C5B3902799525100C1A8E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -122,6 +128,7 @@
 		4989BA1A279AD24600B5310B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4989BA71279C254400B5310B /* UserInfoDetailViewController */,
 				4989BA36279B18E800B5310B /* CountryPickerViewController */,
 			);
 			path = Views;
@@ -200,8 +207,18 @@
 				4989BA67279C052300B5310B /* Coordinator.swift */,
 				4989BA69279C05F700B5310B /* AppCoordinator.swift */,
 				4989BA6D279C0AE500B5310B /* LoginCoordinator.swift */,
+				4989BA6F279C103200B5310B /* UserInfoCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		4989BA71279C254400B5310B /* UserInfoDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4989BA78279C27B900B5310B /* UserInfoDetailViewController.storyboard */,
+				4989BA72279C257300B5310B /* UserInfoDetailViewController.swift */,
+			);
+			path = UserInfoDetailViewController;
 			sourceTree = "<group>";
 		};
 		49C5B37D2799525100C1A8E0 = {
@@ -386,6 +403,7 @@
 				4989BA3A279B193700B5310B /* CountryPickerViewController.xib in Resources */,
 				49C5B3932799525300C1A8E0 /* Assets.xcassets in Resources */,
 				49C5B3912799525100C1A8E0 /* Main.storyboard in Resources */,
+				4989BA79279C27B900B5310B /* UserInfoDetailViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,12 +495,14 @@
 				4989BA68279C052300B5310B /* Coordinator.swift in Sources */,
 				4989BA5D279BFFF900B5310B /* UserInfoWorker.swift in Sources */,
 				4989BA6A279C05F700B5310B /* AppCoordinator.swift in Sources */,
+				4989BA73279C257300B5310B /* UserInfoDetailViewController.swift in Sources */,
 				4989BA42279BE18500B5310B /* Address.swift in Sources */,
 				4989BA65279C010300B5310B /* UserInfoConfigurator.swift in Sources */,
 				4989BA39279B193700B5310B /* CountryPickerViewController.swift in Sources */,
 				49C5B3C12799548F00C1A8E0 /* LoginPresenter.swift in Sources */,
 				49C5B3C42799548F00C1A8E0 /* LoginModels.swift in Sources */,
 				49C5B3C32799548F00C1A8E0 /* LoginRouter.swift in Sources */,
+				4989BA70279C103200B5310B /* UserInfoCoordinator.swift in Sources */,
 				4989BA5E279BFFF900B5310B /* UserInfoRouter.swift in Sources */,
 				49C5B3C52799548F00C1A8E0 /* LoginViewController.swift in Sources */,
 				49C5B38A2799525100C1A8E0 /* AppDelegate.swift in Sources */,

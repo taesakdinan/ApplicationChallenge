@@ -32,6 +32,7 @@ class LoginViewController: UIViewController {
     
     var interactor: LoginBusinessLogic?
     var router: (NSObjectProtocol & LoginRoutingLogic & LoginDataPassing)?
+    var coordinator: LoginCoordinatable?
     
     // MARK: - View lifecycle
     override func awakeFromNib() {
