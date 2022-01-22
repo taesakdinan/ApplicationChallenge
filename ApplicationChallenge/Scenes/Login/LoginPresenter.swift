@@ -9,20 +9,31 @@
 import UIKit
 
 protocol LoginPresentationLogic {
-    func presentCountryList()
+    func presentAlert(response: Login.Alert.Response)
     func presentCountry(response: Login.Country.Response)
+    func presentCountryList()
+    func clearPassword()
 }
 
 class LoginPresenter: LoginPresentationLogic {
     
     weak var viewController: LoginDisplayLogic?
     
-    func presentCountryList() {
-        viewController?.diplayCountryList()
+    func presentAlert(response: Login.Alert.Response) {
+        let viewModel = Login.Alert.ViewModel(title: "Fail", message: response.message)
+        viewController?.displayAlert(viewModel: viewModel)
     }
     
     func presentCountry(response: Login.Country.Response) {
         let viewModel = Login.Country.ViewModel(name: response.name)
         viewController?.displayCountry(viewModel: viewModel)
+    }
+    
+    func presentCountryList() {
+        viewController?.displayCountryList()
+    }
+    
+    func clearPassword() {
+        viewController?.clearPassword()
     }
 }

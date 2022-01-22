@@ -10,6 +10,7 @@ import UIKit
 
 @objc protocol LoginRoutingLogic {
     func navigateToCountryList()
+    func navigateToDetailScene()
 }
 
 protocol LoginDataPassing {
@@ -25,12 +26,14 @@ class LoginRouter: NSObject, LoginDataPassing {
 // MARK: - LoginRoutingLogic
 extension LoginRouter: LoginRoutingLogic {
     func navigateToCountryList() {
-//        guard let destinationVC = CountryListViewController.instantiateViewController(dataStore?.onSelectedCountry) else { return }
-//        viewController?.present(destinationVC, animated: true)
         guard let dataStore = dataStore else { return }
         let destinationVC = CountryPickerViewController.instantiateViewController()
         destinationVC.dataList = dataStore.countryList
         destinationVC.onSelected = dataStore.onSelectedCountry
         viewController?.present(destinationVC, animated: true)
+    }
+    
+    func navigateToDetailScene() {
+        // TODO: implement
     }
 }

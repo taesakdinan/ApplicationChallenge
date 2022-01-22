@@ -9,10 +9,8 @@
 import Foundation
 
 enum LoginUserAction {
-    case enterUsername
-    case enterPassword
     case selectCountry
-    case loginPressed
+    case loginPressed(request: Login.InputData.Request)
 }
 
 protocol LoginBusinessLogic: SceneBusinessLogic {
@@ -25,9 +23,8 @@ protocol LoginDataStore {
 }
 
 class LoginInteractor: LoginDataStore {
-    
     var presenter: LoginPresentationLogic?
-    var worker: LoginWorker?
+    lazy var worker = LoginWorker()
     var onSelectedCountry: ((_ index: Int?) -> Void)?
     private(set) var countryList: [String] = []
 }
@@ -35,12 +32,14 @@ class LoginInteractor: LoginDataStore {
 extension LoginInteractor: LoginBusinessLogic {
     func userActionOccured(userAction: LoginUserAction) {
         switch userAction {
-        case .enterUsername:
-            break
         case .selectCountry:
             prepareCountryListData()
             presenter?.presentCountryList()
-        default: break
+        case .loginPressed(let request):
+            let result = worker.validateData(username: request.username,
+                                             password: request.password,
+                                             country: request.country)
+            handleValidateResult(result)
         }
     }
     
@@ -70,6 +69,44 @@ private extension LoginInteractor {
     
     func prepareCountryListData() {
         countryList = Locale.isoRegionCodes.compactMap { Locale.current.localizedString(forRegionCode: $0) }
+    }
+    
+    func handleValidateResult(_ result: LoginWorkerResult.ValidateData) {
+        switch result {
+        case .valid:
+            // TODO: presenter next scene
+            break
+        case .shortUsernameAndPassword:
+            let reponse = Login.Alert.Response(message: AlertMessage.shortUsernameAndPassword.message)
+            presenter?.presentAlert(response: reponse)
+            presenter?.clearPassword()
+        case .shortUsername:
+            let reponse = Login.Alert.Response(message: AlertMessage.shortUsername.message)
+            presenter?.presentAlert(response: reponse)
+            presenter?.clearPassword()
+        case .shortPassword:
+            let reponse = Login.Alert.Response(message: AlertMessage.shortPassword.message)
+            presenter?.presentAlert(response: reponse)
+            presenter?.clearPassword()
+        default: break
+        }
+    }
+}
+
+private enum AlertMessage {
+    case shortUsername
+    case shortPassword
+    case shortUsernameAndPassword
+    
+    var message: String {
+        switch self {
+        case .shortUsername:
+            return "Username at least \(Constants.minimuimLength) characters"
+        case .shortPassword:
+            return "Password at least \(Constants.minimuimLength) characters"
+        case .shortUsernameAndPassword:
+            return "Username and Password at least \(Constants.minimuimLength) characters"
+        }
     }
 }
 

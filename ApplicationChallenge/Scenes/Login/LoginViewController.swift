@@ -9,9 +9,11 @@
 import UIKit
 
 protocol LoginDisplayLogic: AnyObject {
-    func displayAlert()
-    func diplayCountryList()
+    func displayAlert(viewModel: Login.Alert.ViewModel)
     func displayCountry(viewModel: Login.Country.ViewModel)
+    func displayCountryList()
+    func displayDetailScene()
+    func clearPassword()
 }
 
 class LoginViewController: UIViewController {
@@ -50,7 +52,6 @@ class LoginViewController: UIViewController {
     private func setup() {
         usernameTextField.delegate = self
         passwordTextField.delegate = self
-        selectCountryButton.setTitle("", for: .normal)
     }
     
     private func registerKeyboardNotifications() {
@@ -63,16 +64,16 @@ class LoginViewController: UIViewController {
                                              name: UIResponder.keyboardWillHideNotification,
                                              object: nil)
     }
-
+    
     @objc private func keyboardWillShow(notification: NSNotification) {
-        let userInfo: NSDictionary = notification.userInfo! as NSDictionary
-        let keyboardInfo = userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue
+        let userInfo = notification.userInfo as? [String: Any]
+        guard let keyboardInfo = userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue else { return }
         let keyboardSize = keyboardInfo.cgRectValue.size
         let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
         scrollView.contentInset = contentInsets
         scrollView.scrollIndicatorInsets = contentInsets
     }
-
+    
     @objc private func keyboardWillHide(notification: NSNotification) {
         scrollView.contentInset = .zero
         scrollView.scrollIndicatorInsets = .zero
@@ -83,23 +84,37 @@ class LoginViewController: UIViewController {
         case selectCountryButton:
             interactor?.userActionOccured(userAction: .selectCountry)
         case loginButton:
-            interactor?.userActionOccured(userAction: .loginPressed)
+            let request = Login.InputData.Request(username: usernameTextField.text,
+                                                  password: passwordTextField.text,
+                                                  country: countryTextField.text)
+            interactor?.userActionOccured(userAction: .loginPressed(request: request))
         default: break
         }
     }
 }
 // MARK: - LoginDisplayLogic
 extension LoginViewController: LoginDisplayLogic {
-    func displayAlert() {
-        
-    }
-    
-    func diplayCountryList() {
-        router?.navigateToCountryList()
+    func displayAlert(viewModel: Login.Alert.ViewModel) {
+        let alert = UIAlertController(title: viewModel.title, message: viewModel.message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true)
     }
     
     func displayCountry(viewModel: Login.Country.ViewModel) {
         countryTextField.text = viewModel.name
+    }
+    
+    func displayCountryList() {
+        router?.navigateToCountryList()
+    }
+    
+    func displayDetailScene() {
+        router?.navigateToDetailScene()
+    }
+    
+    func clearPassword() {
+        passwordTextField.text = nil
     }
 
 }
@@ -110,11 +125,7 @@ extension LoginViewController: UITextFieldDelegate {
         return true
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if textField == usernameTextField {
-            interactor?.userActionOccured(userAction: .enterUsername)
-        } else if textField == passwordTextField {
-            interactor?.userActionOccured(userAction: .enterPassword)
-        }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        string != " "
     }
 }

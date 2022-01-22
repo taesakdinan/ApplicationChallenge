@@ -9,12 +9,26 @@
 import Foundation
 
 enum Login {
-    enum Username {
+    enum Alert {
+        struct Response {
+            let message: String
+        }
+        struct ViewModel {
+            let title: String
+            let message: String
+        }
+    }
+    enum InputData {
         struct Request {
-            let username: String
+            let username: String?
+            let password: String?
+            let country: String?
         }
     }
     enum Country {
+        struct Request {
+            let text: String
+        }
         struct Response {
             let name: String
         }
