@@ -12,7 +12,24 @@
 
 import Foundation
 
+enum UserInfoWorkerResult {
+    enum Users {
+        case success([User])
+        case error(String)
+    }
+}
+
 class UserInfoWorker {
-    func doSomeWork() {
+    lazy var userUsecase: UserUsecaseInterface = UserUsecase()
+    
+    func getUsers(completion: @escaping ((UserInfoWorkerResult.Users) -> Void)) {
+        userUsecase.getUsers { result in
+            switch result {
+            case .success(let users):
+                completion(.success(users))
+            case .error(let message):
+                completion(.error(message))
+            }
+        }
     }
 }

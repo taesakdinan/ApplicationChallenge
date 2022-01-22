@@ -13,16 +13,14 @@
 import UIKit
 
 protocol UserInfoPresentationLogic {
-    func presentSomething(response: UserInfo.Something.Response)
+    func presentLoading(response: UserInfo.Loading.Response)
 }
 
 class UserInfoPresenter: UserInfoPresentationLogic {
     weak var viewController: UserInfoDisplayLogic?
     
-    // MARK: Do something
-    
-    func presentSomething(response: UserInfo.Something.Response) {
-        let viewModel = UserInfo.Something.ViewModel()
-        viewController?.displaySomething(viewModel: viewModel)
+    func presentLoading(response: UserInfo.Loading.Response) {
+        let viewModel = UserInfo.Loading.ViewModel(isShow: response.isShow)
+        viewController?.displayLoading(viewModel: viewModel)
     }
 }

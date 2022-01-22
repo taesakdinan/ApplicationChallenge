@@ -14,16 +14,18 @@ import UIKit
 import Parchment
 
 protocol UserInfoDisplayLogic: AnyObject {
-    func displaySomething(viewModel: UserInfo.Something.ViewModel)
+    func displayLoading(viewModel: UserInfo.Loading.ViewModel)
 }
 
-class UserInfoViewController: UIViewController, UserInfoDisplayLogic {
+class UserInfoViewController: UIViewController {
     
     class func instantiateViewController() -> UserInfoViewController {
         let storyboard = UIStoryboard(name: "UserInfo", bundle: nil)
         let destinationVC = storyboard.instantiateViewController(withIdentifier: "UserInfoViewController") as! UserInfoViewController
         return destinationVC
     }
+    
+    @IBOutlet private weak var activityIndicatorView: UIActivityIndicatorView!
     
     var interactor: UserInfoBusinessLogic?
     var router: (NSObjectProtocol & UserInfoRoutingLogic & UserInfoDataPassing)?
@@ -37,6 +39,7 @@ class UserInfoViewController: UIViewController, UserInfoDisplayLogic {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        interactor?.viewControllerStateChanged(state: .viewDidLoad)
         let firstViewController = UserInfoDetailViewController.instantiateViewController()
          let secondViewController = UserInfoDetailViewController.instantiateViewController()
         let pagingViewController = PagingViewController(viewControllers: [
@@ -54,19 +57,16 @@ class UserInfoViewController: UIViewController, UserInfoDisplayLogic {
           pagingViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
           pagingViewController.view.topAnchor.constraint(equalTo: view.topAnchor)
         ])
-        doSomething()
     }
     
-    // MARK: Do something
-    
-//    @IBOutlet weak var nameTextField: UITextField!
-    
-    func doSomething() {
-        let request = UserInfo.Something.Request()
-        interactor?.doSomething(request: request)
-    }
-    
-    func displaySomething(viewModel: UserInfo.Something.ViewModel) {
-//        nameTextField.text = viewModel.name
+}
+
+extension UserInfoViewController: UserInfoDisplayLogic {
+    func displayLoading(viewModel: UserInfo.Loading.ViewModel) {
+        if viewModel.isShow {
+            activityIndicatorView.startAnimating()
+        } else {
+            activityIndicatorView.stopAnimating()
+        }
     }
 }

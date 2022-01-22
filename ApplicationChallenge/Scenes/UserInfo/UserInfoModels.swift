@@ -13,16 +13,10 @@
 import Foundation
 
 enum UserInfo {
-    // MARK: Use cases
-    
-    enum Something {
-        struct Request {
-        }
-        
+    enum Loading {
         struct Response {
+            let isShow: Bool
         }
-        
-        struct ViewModel {
-        }
+        typealias ViewModel = Response
     }
 }

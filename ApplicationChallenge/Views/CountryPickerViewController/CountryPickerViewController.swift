@@ -16,13 +16,13 @@ final class CountryPickerViewController: UIViewController {
     @IBOutlet private weak var containerView: UIView!
     @IBOutlet private weak var bottomConstraint: NSLayoutConstraint!
     
-    var onSelected: ((_ index: Int?) -> Void)?
+    var currentIndexSelected = 0
+    var onSelected: ((_ index: Int) -> Void)?
     var dataList: [String] = [] {
         didSet {
             pickerView?.reloadAllComponents()
         }
     }
-    private var currentIndexSelected: Int?
     private var kAnimateDuration: TimeInterval { 0.33 }
     
     class func instantiateViewController() -> CountryPickerViewController {
@@ -37,6 +37,13 @@ final class CountryPickerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if dataList.count > currentIndexSelected {
+            pickerView.selectRow(currentIndexSelected, inComponent: 0, animated: false)
+        }
     }
     
     // MARK: - Private methods
@@ -55,12 +62,7 @@ final class CountryPickerViewController: UIViewController {
         dismiss()
     }
     
-    @IBAction private func pressButton(_ sender: UIControl) {
-        switch sender {
-        case self.view:
-            currentIndexSelected = nil
-        default: break
-        }
+    @IBAction private func pressedDoneButton(_ sender: UIButton) {
         onSelected?(currentIndexSelected)
         dismiss()
     }

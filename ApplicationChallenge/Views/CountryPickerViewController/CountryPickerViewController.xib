@@ -43,7 +43,7 @@
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <connections>
-                                        <action selector="pressButton:" destination="-1" eventType="touchUpInside" id="5z7-if-wXd"/>
+                                        <action selector="pressedDoneButton:" destination="-1" eventType="touchUpInside" id="fVH-fd-Ygo"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -82,9 +82,6 @@
                 <constraint firstItem="4en-hg-A7P" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="uCA-KE-qE9"/>
                 <constraint firstItem="4en-hg-A7P" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="x1k-y6-nvZ"/>
             </constraints>
-            <connections>
-                <action selector="pressButton:" destination="-1" eventType="touchUpInside" id="WfX-9Z-NBH"/>
-            </connections>
             <point key="canvasLocation" x="131.8840579710145" y="105.80357142857143"/>
         </view>
     </objects>

@@ -12,26 +12,49 @@
 
 import Foundation
 
-protocol UserInfoBusinessLogic {
-    func doSomething(request: UserInfo.Something.Request)
+enum UserInfoAction {
+}
+
+protocol UserInfoBusinessLogic: SceneBusinessLogic {
+    func userActionOccured(userAction: LoginUserAction)
 }
 
 protocol UserInfoDataStore {
-//    var name: String { get set }
 }
 
-class UserInfoInteractor: UserInfoBusinessLogic, UserInfoDataStore {
+class UserInfoInteractor: UserInfoDataStore {
     var presenter: UserInfoPresentationLogic?
-    var worker: UserInfoWorker?
-//    var name: String = ""
+    lazy var worker = UserInfoWorker()
     
-    // MARK: Do something
-    
-    func doSomething(request: UserInfo.Something.Request) {
-        worker = UserInfoWorker()
-        worker?.doSomeWork()
+    private var users: [User] = []
+}
+
+extension UserInfoInteractor: UserInfoBusinessLogic {
+    func userActionOccured(userAction: LoginUserAction) {
         
-        let response = UserInfo.Something.Response()
-        presenter?.presentSomething(response: response)
+    }
+    
+    func viewControllerStateChanged(state: ViewControllerState) {
+        switch state {
+        case .viewDidLoad:
+            getUsers()
+        default: break
+        }
+    }
+}
+
+private extension UserInfoInteractor {
+    func getUsers() {
+        presenter?.presentLoading(response: UserInfo.Loading.Response(isShow: true))
+        worker.getUsers {[weak self] result in
+            guard let self = self, let presenter = self.presenter else { return }
+            presenter.presentLoading(response: UserInfo.Loading.Response(isShow: false))
+            switch result {
+            case .success(let users):
+                self.users = users
+            case .error(let message):
+                break
+            }
+        }
     }
 }

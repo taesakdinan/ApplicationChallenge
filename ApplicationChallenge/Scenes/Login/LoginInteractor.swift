@@ -18,14 +18,16 @@ protocol LoginBusinessLogic: SceneBusinessLogic {
 }
 
 protocol LoginDataStore {
-    var onSelectedCountry: ((_ index: Int?) -> Void)? { get set }
+    var onSelectedCountry: ((_ index: Int) -> Void)? { get set }
+    var currentCountryIndex: Int { get }
     var countryList: [String] { get }
 }
 
 class LoginInteractor: LoginDataStore {
     var presenter: LoginPresentationLogic?
     lazy var worker = LoginWorker()
-    var onSelectedCountry: ((_ index: Int?) -> Void)?
+    var onSelectedCountry: ((_ index: Int) -> Void)?
+    private(set) var currentCountryIndex = 0
     private(set) var countryList: [String] = []
 }
 
@@ -54,11 +56,8 @@ extension LoginInteractor: LoginBusinessLogic {
 private extension LoginInteractor {
     func handleOnSelectedCountry() {
         onSelectedCountry = { [weak self] index in
-            guard let self = self,
-                  let presenter = self.presenter,
-                  let index = index else {
-                      return
-                  }
+            guard let self = self, let presenter = self.presenter else { return }
+            self.currentCountryIndex = index
             let name = self.countryList[index]
             self.countryList = []
             let response = Login.Country.Response(name: name)

@@ -27,7 +27,8 @@ class LoginRouter: NSObject, LoginDataPassing {
 extension LoginRouter: LoginRoutingLogic {
     func navigateToCountryList() {
         guard let dataStore = dataStore else { return }
-        viewController?.coordinator?.showCountryPicker(dataList: dataStore.countryList,
+        viewController?.coordinator?.showCountryPicker(currentIndex: dataStore.currentCountryIndex,
+                                                       dataList: dataStore.countryList,
                                                        onSelected: dataStore.onSelectedCountry)
     }
     

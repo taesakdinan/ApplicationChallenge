@@ -32,6 +32,8 @@
 		4989BA70279C103200B5310B /* UserInfoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA6F279C103200B5310B /* UserInfoCoordinator.swift */; };
 		4989BA73279C257300B5310B /* UserInfoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA72279C257300B5310B /* UserInfoDetailViewController.swift */; };
 		4989BA79279C27B900B5310B /* UserInfoDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4989BA78279C27B900B5310B /* UserInfoDetailViewController.storyboard */; };
+		4989BA7E279C3A4C00B5310B /* UsersAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA7D279C3A4C00B5310B /* UsersAPI.swift */; };
+		4989BA81279C3B8A00B5310B /* UserUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA80279C3B8A00B5310B /* UserUsecase.swift */; };
 		49C5B38A2799525100C1A8E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C5B3892799525100C1A8E0 /* AppDelegate.swift */; };
 		49C5B3912799525100C1A8E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49C5B38F2799525100C1A8E0 /* Main.storyboard */; };
 		49C5B3932799525300C1A8E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49C5B3922799525300C1A8E0 /* Assets.xcassets */; };
@@ -83,6 +85,8 @@
 		4989BA6F279C103200B5310B /* UserInfoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoCoordinator.swift; sourceTree = "<group>"; };
 		4989BA72279C257300B5310B /* UserInfoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoDetailViewController.swift; sourceTree = "<group>"; };
 		4989BA78279C27B900B5310B /* UserInfoDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserInfoDetailViewController.storyboard; sourceTree = "<group>"; };
+		4989BA7D279C3A4C00B5310B /* UsersAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersAPI.swift; sourceTree = "<group>"; };
+		4989BA80279C3B8A00B5310B /* UserUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUsecase.swift; sourceTree = "<group>"; };
 		49C5B3862799525100C1A8E0 /* ApplicationChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApplicationChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49C5B3892799525100C1A8E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49C5B3902799525100C1A8E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -221,6 +225,22 @@
 			path = UserInfoDetailViewController;
 			sourceTree = "<group>";
 		};
+		4989BA7A279C387400B5310B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				4989BA7D279C3A4C00B5310B /* UsersAPI.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		4989BA7F279C3B6700B5310B /* Usecases */ = {
+			isa = PBXGroup;
+			children = (
+				4989BA80279C3B8A00B5310B /* UserUsecase.swift */,
+			);
+			path = Usecases;
+			sourceTree = "<group>";
+		};
 		49C5B37D2799525100C1A8E0 = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +271,8 @@
 				49C5B38F2799525100C1A8E0 /* Main.storyboard */,
 				4989BA3B279BD23D00B5310B /* Configs */,
 				4989BA3E279BE14300B5310B /* Entities */,
+				4989BA7A279C387400B5310B /* Network */,
+				4989BA7F279C3B6700B5310B /* Usecases */,
 				4989BA66279C050A00B5310B /* Coordinator */,
 				4989BA1A279AD24600B5310B /* Views */,
 				4989BA33279B12B900B5310B /* Presentation */,
@@ -495,8 +517,10 @@
 				4989BA68279C052300B5310B /* Coordinator.swift in Sources */,
 				4989BA5D279BFFF900B5310B /* UserInfoWorker.swift in Sources */,
 				4989BA6A279C05F700B5310B /* AppCoordinator.swift in Sources */,
+				4989BA81279C3B8A00B5310B /* UserUsecase.swift in Sources */,
 				4989BA73279C257300B5310B /* UserInfoDetailViewController.swift in Sources */,
 				4989BA42279BE18500B5310B /* Address.swift in Sources */,
+				4989BA7E279C3A4C00B5310B /* UsersAPI.swift in Sources */,
 				4989BA65279C010300B5310B /* UserInfoConfigurator.swift in Sources */,
 				4989BA39279B193700B5310B /* CountryPickerViewController.swift in Sources */,
 				49C5B3C12799548F00C1A8E0 /* LoginPresenter.swift in Sources */,
