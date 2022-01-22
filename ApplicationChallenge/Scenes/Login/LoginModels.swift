@@ -9,10 +9,15 @@
 import Foundation
 
 enum Login {
-    
     enum Username {
         struct Request {
             let username: String
         }
+    }
+    enum Country {
+        struct Response {
+            let name: String
+        }
+        typealias ViewModel = Response
     }
 }

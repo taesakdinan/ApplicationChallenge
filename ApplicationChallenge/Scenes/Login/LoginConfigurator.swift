@@ -13,7 +13,6 @@ class LoginConfigurator {
         let interactor = LoginInteractor()
         let presenter = LoginPresenter()
         let router = LoginRouter()
-        viewController.coordinator = AppCoordinator(navigationController: UINavigationController())
         viewController.interactor = interactor
         viewController.router = router
         interactor.presenter = presenter

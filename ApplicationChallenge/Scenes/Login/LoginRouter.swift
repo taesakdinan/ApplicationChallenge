@@ -9,42 +9,28 @@
 import UIKit
 
 @objc protocol LoginRoutingLogic {
-    //    func routeToSomewhere(segue: UIStoryboardSegue?)
+    func navigateToCountryList()
 }
 
 protocol LoginDataPassing {
     var dataStore: LoginDataStore? { get }
 }
 
-class LoginRouter: NSObject, LoginRoutingLogic, LoginDataPassing {
+class LoginRouter: NSObject, LoginDataPassing {
     weak var viewController: LoginViewController?
     var dataStore: LoginDataStore?
     
-    // MARK: Routing
-    
-//    func routeToSomewhere(segue: UIStoryboardSegue?) {
-//        if let segue = segue {
-//            let destinationVC = segue.destination as! SomewhereViewController
-//            var destinationDS = destinationVC.router!.dataStore!
-//            passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-//        } else {
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-//            var destinationDS = destinationVC.router!.dataStore!
-//            passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-//            navigateToSomewhere(source: viewController!, destination: destinationVC)
-//        }
-//    }
-    
-    // MARK: Navigation
-    
-//    func navigateToSomewhere(source: LoginViewController, destination: SomewhereViewController) {
-//        source.show(destination, sender: nil)
-//    }
-    
-    // MARK: Passing data
-    
-//    func passDataToSomewhere(source: LoginDataStore, destination: inout SomewhereDataStore) {
-//        destination.name = source.name
-//    }
+
+}
+// MARK: - LoginRoutingLogic
+extension LoginRouter: LoginRoutingLogic {
+    func navigateToCountryList() {
+//        guard let destinationVC = CountryListViewController.instantiateViewController(dataStore?.onSelectedCountry) else { return }
+//        viewController?.present(destinationVC, animated: true)
+        guard let dataStore = dataStore else { return }
+        let destinationVC = CountryPickerViewController.instantiateViewController()
+        destinationVC.dataList = dataStore.countryList
+        destinationVC.onSelected = dataStore.onSelectedCountry
+        viewController?.present(destinationVC, animated: true)
+    }
 }

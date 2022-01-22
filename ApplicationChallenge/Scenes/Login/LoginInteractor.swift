@@ -15,20 +15,21 @@ enum LoginUserAction {
     case loginPressed
 }
 
-protocol LoginBusinessLogic {
+protocol LoginBusinessLogic: SceneBusinessLogic {
     func userActionOccured(userAction: LoginUserAction)
 }
 
 protocol LoginDataStore {
-//    var name: String { get set }
+    var onSelectedCountry: ((_ index: Int?) -> Void)? { get set }
+    var countryList: [String] { get }
 }
 
 class LoginInteractor: LoginDataStore {
     
     var presenter: LoginPresentationLogic?
     var worker: LoginWorker?
-//    var name: String = ""
-    
+    var onSelectedCountry: ((_ index: Int?) -> Void)?
+    private(set) var countryList: [String] = []
 }
 
 extension LoginInteractor: LoginBusinessLogic {
@@ -36,8 +37,39 @@ extension LoginInteractor: LoginBusinessLogic {
         switch userAction {
         case .enterUsername:
             break
+        case .selectCountry:
+            prepareCountryListData()
+            presenter?.presentCountryList()
         default: break
         }
+    }
+    
+    func viewControllerStateChanged(state: ViewControllerState) {
+        switch state {
+        case .viewDidLoad:
+            handleOnSelectedCountry()
+        default: break
+        }
+    }
+}
+
+private extension LoginInteractor {
+    func handleOnSelectedCountry() {
+        onSelectedCountry = { [weak self] index in
+            guard let self = self,
+                  let presenter = self.presenter,
+                  let index = index else {
+                      return
+                  }
+            let name = self.countryList[index]
+            self.countryList = []
+            let response = Login.Country.Response(name: name)
+            presenter.presentCountry(response: response)
+        }
+    }
+    
+    func prepareCountryListData() {
+        countryList = Locale.isoRegionCodes.compactMap { Locale.current.localizedString(forRegionCode: $0) }
     }
 }
 
