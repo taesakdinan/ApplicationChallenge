@@ -34,6 +34,7 @@
 		4989BA79279C27B900B5310B /* UserInfoDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4989BA78279C27B900B5310B /* UserInfoDetailViewController.storyboard */; };
 		4989BA7E279C3A4C00B5310B /* UsersAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA7D279C3A4C00B5310B /* UsersAPI.swift */; };
 		4989BA81279C3B8A00B5310B /* UserUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA80279C3B8A00B5310B /* UserUsecase.swift */; };
+		4989BA89279C6B7C00B5310B /* Extension+UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA88279C6B7C00B5310B /* Extension+UIApplication.swift */; };
 		49C5B38A2799525100C1A8E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C5B3892799525100C1A8E0 /* AppDelegate.swift */; };
 		49C5B3912799525100C1A8E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49C5B38F2799525100C1A8E0 /* Main.storyboard */; };
 		49C5B3932799525300C1A8E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49C5B3922799525300C1A8E0 /* Assets.xcassets */; };
@@ -87,6 +88,7 @@
 		4989BA78279C27B900B5310B /* UserInfoDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserInfoDetailViewController.storyboard; sourceTree = "<group>"; };
 		4989BA7D279C3A4C00B5310B /* UsersAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersAPI.swift; sourceTree = "<group>"; };
 		4989BA80279C3B8A00B5310B /* UserUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUsecase.swift; sourceTree = "<group>"; };
+		4989BA88279C6B7C00B5310B /* Extension+UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIApplication.swift"; sourceTree = "<group>"; };
 		49C5B3862799525100C1A8E0 /* ApplicationChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApplicationChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49C5B3892799525100C1A8E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49C5B3902799525100C1A8E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -151,14 +153,6 @@
 				4989BA57279BFFF900B5310B /* UserInfoWorker.swift */,
 			);
 			path = UserInfo;
-			sourceTree = "<group>";
-		};
-		4989BA33279B12B900B5310B /* Presentation */ = {
-			isa = PBXGroup;
-			children = (
-				4989BA34279B12D800B5310B /* Sceneable.swift */,
-			);
-			path = Presentation;
 			sourceTree = "<group>";
 		};
 		4989BA36279B18E800B5310B /* CountryPickerViewController */ = {
@@ -241,6 +235,23 @@
 			path = Usecases;
 			sourceTree = "<group>";
 		};
+		4989BA84279C533300B5310B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				4989BA34279B12D800B5310B /* Sceneable.swift */,
+				4989BA1A279AD24600B5310B /* Views */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		4989BA87279C6B3800B5310B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4989BA88279C6B7C00B5310B /* Extension+UIApplication.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		49C5B37D2799525100C1A8E0 = {
 			isa = PBXGroup;
 			children = (
@@ -270,12 +281,12 @@
 				49C5B3942799525300C1A8E0 /* LaunchScreen.storyboard */,
 				49C5B38F2799525100C1A8E0 /* Main.storyboard */,
 				4989BA3B279BD23D00B5310B /* Configs */,
+				4989BA87279C6B3800B5310B /* Extension */,
 				4989BA3E279BE14300B5310B /* Entities */,
 				4989BA7A279C387400B5310B /* Network */,
 				4989BA7F279C3B6700B5310B /* Usecases */,
 				4989BA66279C050A00B5310B /* Coordinator */,
-				4989BA1A279AD24600B5310B /* Views */,
-				4989BA33279B12B900B5310B /* Presentation */,
+				4989BA84279C533300B5310B /* Components */,
 				49C5B3B92799545200C1A8E0 /* Scenes */,
 			);
 			path = ApplicationChallenge;
@@ -511,6 +522,7 @@
 				4989BA61279BFFF900B5310B /* UserInfoInteractor.swift in Sources */,
 				4989BA35279B12D800B5310B /* Sceneable.swift in Sources */,
 				4989BA3D279BD26600B5310B /* AppConstants.swift in Sources */,
+				4989BA89279C6B7C00B5310B /* Extension+UIApplication.swift in Sources */,
 				4989BA44279BE19900B5310B /* Company.swift in Sources */,
 				49C5B3C22799548F00C1A8E0 /* LoginWorker.swift in Sources */,
 				4989BA6E279C0AE500B5310B /* LoginCoordinator.swift in Sources */,

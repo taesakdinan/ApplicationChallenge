@@ -17,15 +17,15 @@ class AppCoordinator: Coordinator {
     }
     
     override func start() {
-        startLoginScene()
+        startLogin()
     }
     
-    private func startLoginScene() {
+    private func startLogin() {
         let coor = LoginCoordinator(navigationController: navigationController)
         coor.onFinishFlow = { [weak self, weak coor] in
             guard let self = self, let coor = coor else { return }
-            self.remove(childCoordinator: coor)
             self.startUserInfo()
+            self.remove(childCoordinator: coor)
         }
         add(childCoordinator: coor)
         coor.start()

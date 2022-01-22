@@ -6,8 +6,8 @@
 //  Copyright © 2022 Sakdinan. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct Constants {
-    static let minimuimLength = 6
+    static let minimuimLength: Int = 6
 }

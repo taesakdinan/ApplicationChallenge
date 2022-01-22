@@ -25,8 +25,6 @@ protocol UserInfoDataStore {
 class UserInfoInteractor: UserInfoDataStore {
     var presenter: UserInfoPresentationLogic?
     lazy var worker = UserInfoWorker()
-    
-    private var users: [User] = []
 }
 
 extension UserInfoInteractor: UserInfoBusinessLogic {
@@ -51,7 +49,8 @@ private extension UserInfoInteractor {
             presenter.presentLoading(response: UserInfo.Loading.Response(isShow: false))
             switch result {
             case .success(let users):
-                self.users = users
+                let response = UserInfo.UserInfo.Response(users: users)
+                presenter.presentUserInfo(response: response)
             case .error(let message):
                 break
             }

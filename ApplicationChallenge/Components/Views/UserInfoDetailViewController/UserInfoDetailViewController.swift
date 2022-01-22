@@ -14,10 +14,12 @@ final class UserInfoDetailViewController: UIViewController {
     @IBOutlet private weak var addressLabel: UILabel!
     @IBOutlet private weak var phoneLabel: UILabel!
     @IBOutlet private weak var websiteLabel: UILabel!
-    @IBOutlet private weak var companyName: UILabel!
+    @IBOutlet private weak var companyNameLabel: UILabel!
     @IBOutlet private weak var positionLabel: UILabel!
-    @IBOutlet private weak var catchPhrase: UILabel!
+    @IBOutlet private weak var catchPhraseLabel: UILabel!
     @IBOutlet private weak var locationButton: UIButton!
+    
+    var userInfo: User?
     
     class func instantiateViewController() -> UserInfoDetailViewController {
         let storyboard = UIStoryboard(name: "UserInfoDetailViewController", bundle: nil)
@@ -27,8 +29,27 @@ final class UserInfoDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
     }
     
     func setup() {
+        nameLabel.text = userInfo?.name ?? "-"
+        emailLabel.text = userInfo?.email ?? "-"
+        phoneLabel.text = userInfo?.phone ?? "-"
+        websiteLabel.text = userInfo?.website
+        companyNameLabel.text = userInfo?.company?.name ?? "-"
+        positionLabel.text = userInfo?.company?.bs ?? "-"
+        let catchPhrase = userInfo?.company?.catchPhrase ?? "-"
+        catchPhraseLabel.text = "\"\(catchPhrase)\""
+        setupAddress(address: userInfo?.address)
+    }
+    
+    private func setupAddress(address: Address?) {
+        guard let address = address else { return }
+        let suite = address.suite ?? "-"
+        let street = address.street ?? "-"
+        let city = address.city ?? "-"
+        let zipcode = address.zipcode ?? "-"
+        addressLabel.text = "\(suite), st. \(street), \(city) city, \(zipcode)"
     }
 }
