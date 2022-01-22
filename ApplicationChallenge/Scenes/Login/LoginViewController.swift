@@ -24,6 +24,12 @@ class LoginViewController: UIViewController {
     @IBOutlet private weak var selectCountryButton: UIButton!
     @IBOutlet private weak var loginButton: UIButton!
     
+    class func instantiateViewController() -> LoginViewController {
+        let storyboard = UIStoryboard(name: "Login", bundle: nil)
+        let destinationVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        return destinationVC
+    }
+    
     var interactor: LoginBusinessLogic?
     var router: (NSObjectProtocol & LoginRoutingLogic & LoginDataPassing)?
     

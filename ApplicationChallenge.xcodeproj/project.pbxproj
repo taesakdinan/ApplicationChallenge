@@ -8,12 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		46334BCDACC9746143DAC513 /* Pods_ApplicationChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BDB292FAFB9052487D20F56 /* Pods_ApplicationChallengeTests.framework */; };
-		4989BA2D279AEC4200B5310B /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA27279AEC4200B5310B /* DetailPresenter.swift */; };
-		4989BA2E279AEC4200B5310B /* DetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA28279AEC4200B5310B /* DetailWorker.swift */; };
-		4989BA2F279AEC4200B5310B /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA29279AEC4200B5310B /* DetailRouter.swift */; };
-		4989BA30279AEC4200B5310B /* DetailModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA2A279AEC4200B5310B /* DetailModels.swift */; };
-		4989BA31279AEC4200B5310B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA2B279AEC4200B5310B /* DetailViewController.swift */; };
-		4989BA32279AEC4200B5310B /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA2C279AEC4200B5310B /* DetailInteractor.swift */; };
 		4989BA35279B12D800B5310B /* Sceneable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA34279B12D800B5310B /* Sceneable.swift */; };
 		4989BA39279B193700B5310B /* CountryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA37279B193700B5310B /* CountryPickerViewController.swift */; };
 		4989BA3A279B193700B5310B /* CountryPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4989BA38279B193700B5310B /* CountryPickerViewController.xib */; };
@@ -23,6 +17,18 @@
 		4989BA44279BE19900B5310B /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA43279BE19900B5310B /* Company.swift */; };
 		4989BA4C279BE95A00B5310B /* LoginInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA48279BE95A00B5310B /* LoginInteractorTests.swift */; };
 		4989BA4E279BE95A00B5310B /* LoginPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA4A279BE95A00B5310B /* LoginPresenterTests.swift */; };
+		4989BA5C279BFFF900B5310B /* UserInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA56279BFFF900B5310B /* UserInfoPresenter.swift */; };
+		4989BA5D279BFFF900B5310B /* UserInfoWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA57279BFFF900B5310B /* UserInfoWorker.swift */; };
+		4989BA5E279BFFF900B5310B /* UserInfoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA58279BFFF900B5310B /* UserInfoRouter.swift */; };
+		4989BA5F279BFFF900B5310B /* UserInfoModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA59279BFFF900B5310B /* UserInfoModels.swift */; };
+		4989BA60279BFFF900B5310B /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA5A279BFFF900B5310B /* UserInfoViewController.swift */; };
+		4989BA61279BFFF900B5310B /* UserInfoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA5B279BFFF900B5310B /* UserInfoInteractor.swift */; };
+		4989BA63279C008C00B5310B /* UserInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4989BA62279C008C00B5310B /* UserInfo.storyboard */; };
+		4989BA65279C010300B5310B /* UserInfoConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA64279C010300B5310B /* UserInfoConfigurator.swift */; };
+		4989BA68279C052300B5310B /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA67279C052300B5310B /* Coordinator.swift */; };
+		4989BA6A279C05F700B5310B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA69279C05F700B5310B /* AppCoordinator.swift */; };
+		4989BA6C279C092C00B5310B /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4989BA6B279C092B00B5310B /* Login.storyboard */; };
+		4989BA6E279C0AE500B5310B /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA6D279C0AE500B5310B /* LoginCoordinator.swift */; };
 		49C5B38A2799525100C1A8E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C5B3892799525100C1A8E0 /* AppDelegate.swift */; };
 		49C5B3912799525100C1A8E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49C5B38F2799525100C1A8E0 /* Main.storyboard */; };
 		49C5B3932799525300C1A8E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49C5B3922799525300C1A8E0 /* Assets.xcassets */; };
@@ -50,12 +56,6 @@
 
 /* Begin PBXFileReference section */
 		16E2C015B89D26E9C3B64A13 /* Pods-ApplicationChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplicationChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-ApplicationChallengeTests/Pods-ApplicationChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
-		4989BA27279AEC4200B5310B /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
-		4989BA28279AEC4200B5310B /* DetailWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWorker.swift; sourceTree = "<group>"; };
-		4989BA29279AEC4200B5310B /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
-		4989BA2A279AEC4200B5310B /* DetailModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModels.swift; sourceTree = "<group>"; };
-		4989BA2B279AEC4200B5310B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		4989BA2C279AEC4200B5310B /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
 		4989BA34279B12D800B5310B /* Sceneable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sceneable.swift; sourceTree = "<group>"; };
 		4989BA37279B193700B5310B /* CountryPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerViewController.swift; sourceTree = "<group>"; };
 		4989BA38279B193700B5310B /* CountryPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryPickerViewController.xib; sourceTree = "<group>"; };
@@ -65,6 +65,18 @@
 		4989BA43279BE19900B5310B /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		4989BA48279BE95A00B5310B /* LoginInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorTests.swift; sourceTree = "<group>"; };
 		4989BA4A279BE95A00B5310B /* LoginPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTests.swift; sourceTree = "<group>"; };
+		4989BA56279BFFF900B5310B /* UserInfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoPresenter.swift; sourceTree = "<group>"; };
+		4989BA57279BFFF900B5310B /* UserInfoWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoWorker.swift; sourceTree = "<group>"; };
+		4989BA58279BFFF900B5310B /* UserInfoRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoRouter.swift; sourceTree = "<group>"; };
+		4989BA59279BFFF900B5310B /* UserInfoModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoModels.swift; sourceTree = "<group>"; };
+		4989BA5A279BFFF900B5310B /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		4989BA5B279BFFF900B5310B /* UserInfoInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoInteractor.swift; sourceTree = "<group>"; };
+		4989BA62279C008C00B5310B /* UserInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserInfo.storyboard; sourceTree = "<group>"; };
+		4989BA64279C010300B5310B /* UserInfoConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoConfigurator.swift; sourceTree = "<group>"; };
+		4989BA67279C052300B5310B /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		4989BA69279C05F700B5310B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		4989BA6B279C092B00B5310B /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		4989BA6D279C0AE500B5310B /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		49C5B3862799525100C1A8E0 /* ApplicationChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApplicationChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49C5B3892799525100C1A8E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49C5B3902799525100C1A8E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -115,17 +127,19 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		4989BA26279AEC2400B5310B /* Detail */ = {
+		4989BA26279AEC2400B5310B /* UserInfo */ = {
 			isa = PBXGroup;
 			children = (
-				4989BA27279AEC4200B5310B /* DetailPresenter.swift */,
-				4989BA28279AEC4200B5310B /* DetailWorker.swift */,
-				4989BA29279AEC4200B5310B /* DetailRouter.swift */,
-				4989BA2A279AEC4200B5310B /* DetailModels.swift */,
-				4989BA2B279AEC4200B5310B /* DetailViewController.swift */,
-				4989BA2C279AEC4200B5310B /* DetailInteractor.swift */,
+				4989BA62279C008C00B5310B /* UserInfo.storyboard */,
+				4989BA64279C010300B5310B /* UserInfoConfigurator.swift */,
+				4989BA5B279BFFF900B5310B /* UserInfoInteractor.swift */,
+				4989BA59279BFFF900B5310B /* UserInfoModels.swift */,
+				4989BA56279BFFF900B5310B /* UserInfoPresenter.swift */,
+				4989BA58279BFFF900B5310B /* UserInfoRouter.swift */,
+				4989BA5A279BFFF900B5310B /* UserInfoViewController.swift */,
+				4989BA57279BFFF900B5310B /* UserInfoWorker.swift */,
 			);
-			path = Detail;
+			path = UserInfo;
 			sourceTree = "<group>";
 		};
 		4989BA33279B12B900B5310B /* Presentation */ = {
@@ -180,6 +194,16 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		4989BA66279C050A00B5310B /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				4989BA67279C052300B5310B /* Coordinator.swift */,
+				4989BA69279C05F700B5310B /* AppCoordinator.swift */,
+				4989BA6D279C0AE500B5310B /* LoginCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		49C5B37D2799525100C1A8E0 = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +234,7 @@
 				49C5B38F2799525100C1A8E0 /* Main.storyboard */,
 				4989BA3B279BD23D00B5310B /* Configs */,
 				4989BA3E279BE14300B5310B /* Entities */,
+				4989BA66279C050A00B5310B /* Coordinator */,
 				4989BA1A279AD24600B5310B /* Views */,
 				4989BA33279B12B900B5310B /* Presentation */,
 				49C5B3B92799545200C1A8E0 /* Scenes */,
@@ -230,7 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				49C5B3BA2799545E00C1A8E0 /* Login */,
-				4989BA26279AEC2400B5310B /* Detail */,
+				4989BA26279AEC2400B5310B /* UserInfo */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -238,6 +263,7 @@
 		49C5B3BA2799545E00C1A8E0 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				4989BA6B279C092B00B5310B /* Login.storyboard */,
 				49C5B3C72799983600C1A8E0 /* LoginConfigurator.swift */,
 				49C5B3C02799548F00C1A8E0 /* LoginInteractor.swift */,
 				49C5B3BE2799548F00C1A8E0 /* LoginModels.swift */,
@@ -355,6 +381,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				49C5B3962799525300C1A8E0 /* LaunchScreen.storyboard in Resources */,
+				4989BA63279C008C00B5310B /* UserInfo.storyboard in Resources */,
+				4989BA6C279C092C00B5310B /* Login.storyboard in Resources */,
 				4989BA3A279B193700B5310B /* CountryPickerViewController.xib in Resources */,
 				49C5B3932799525300C1A8E0 /* Assets.xcassets in Resources */,
 				49C5B3912799525100C1A8E0 /* Main.storyboard in Resources */,
@@ -439,26 +467,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4989BA5F279BFFF900B5310B /* UserInfoModels.swift in Sources */,
+				4989BA61279BFFF900B5310B /* UserInfoInteractor.swift in Sources */,
 				4989BA35279B12D800B5310B /* Sceneable.swift in Sources */,
 				4989BA3D279BD26600B5310B /* AppConstants.swift in Sources */,
-				4989BA2F279AEC4200B5310B /* DetailRouter.swift in Sources */,
 				4989BA44279BE19900B5310B /* Company.swift in Sources */,
-				4989BA31279AEC4200B5310B /* DetailViewController.swift in Sources */,
 				49C5B3C22799548F00C1A8E0 /* LoginWorker.swift in Sources */,
+				4989BA6E279C0AE500B5310B /* LoginCoordinator.swift in Sources */,
+				4989BA68279C052300B5310B /* Coordinator.swift in Sources */,
+				4989BA5D279BFFF900B5310B /* UserInfoWorker.swift in Sources */,
+				4989BA6A279C05F700B5310B /* AppCoordinator.swift in Sources */,
 				4989BA42279BE18500B5310B /* Address.swift in Sources */,
+				4989BA65279C010300B5310B /* UserInfoConfigurator.swift in Sources */,
 				4989BA39279B193700B5310B /* CountryPickerViewController.swift in Sources */,
-				4989BA32279AEC4200B5310B /* DetailInteractor.swift in Sources */,
 				49C5B3C12799548F00C1A8E0 /* LoginPresenter.swift in Sources */,
-				4989BA30279AEC4200B5310B /* DetailModels.swift in Sources */,
 				49C5B3C42799548F00C1A8E0 /* LoginModels.swift in Sources */,
 				49C5B3C32799548F00C1A8E0 /* LoginRouter.swift in Sources */,
+				4989BA5E279BFFF900B5310B /* UserInfoRouter.swift in Sources */,
 				49C5B3C52799548F00C1A8E0 /* LoginViewController.swift in Sources */,
 				49C5B38A2799525100C1A8E0 /* AppDelegate.swift in Sources */,
+				4989BA5C279BFFF900B5310B /* UserInfoPresenter.swift in Sources */,
 				49C5B3C82799983600C1A8E0 /* LoginConfigurator.swift in Sources */,
 				4989BA40279BE17800B5310B /* User.swift in Sources */,
-				4989BA2D279AEC4200B5310B /* DetailPresenter.swift in Sources */,
 				49C5B3C62799548F00C1A8E0 /* LoginInteractor.swift in Sources */,
-				4989BA2E279AEC4200B5310B /* DetailWorker.swift in Sources */,
+				4989BA60279BFFF900B5310B /* UserInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -631,7 +663,6 @@
 				INFOPLIST_FILE = ApplicationChallenge/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -660,7 +691,6 @@
 				INFOPLIST_FILE = ApplicationChallenge/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
