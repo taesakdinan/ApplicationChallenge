@@ -54,6 +54,8 @@ private extension UserInfoInteractor {
             case .success(let users):
                 let response = UserInfo.UserInfo.Response(users: users)
                 presenter.presentUserInfo(response: response)
+            case .dataIncorrect:
+                presenter.presentEmptyAlert()
             case .error:
                 presenter.presentAlert()
             }

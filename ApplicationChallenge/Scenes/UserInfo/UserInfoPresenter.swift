@@ -12,6 +12,7 @@ protocol UserInfoPresentationLogic {
     func presentLoading(response: UserInfo.Loading.Response)
     func presentUserInfo(response: UserInfo.UserInfo.Response)
     func presentAlert()
+    func presentEmptyAlert()
     func closeApplication()
 }
 
@@ -31,6 +32,11 @@ class UserInfoPresenter: UserInfoPresentationLogic {
     func presentAlert() {
         let viewModel = UserInfo.Alert.ViewModel(title: "Fail", message: "Something went wrong, please try again")
         viewController?.displayAlert(viewModel: viewModel)
+    }
+    
+    func presentEmptyAlert() {
+        let viewModel = UserInfo.Alert.ViewModel(title: "Empty", message: "No data for display")
+        viewController?.displayEmptyAlert(viewModel: viewModel)
     }
     
     func closeApplication() {

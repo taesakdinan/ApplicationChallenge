@@ -17,7 +17,6 @@ final class UserInfoDetailViewController: UIViewController {
     @IBOutlet private weak var companyNameLabel: UILabel!
     @IBOutlet private weak var positionLabel: UILabel!
     @IBOutlet private weak var catchPhraseLabel: UILabel!
-    @IBOutlet private weak var locationButton: UIButton!
     
     private var userInfo: User?
     

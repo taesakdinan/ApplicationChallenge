@@ -12,6 +12,7 @@ import Moya
 enum UserUsecaseResult {
     enum Users {
         case success([User])
+        case dataIncorrect
         case error(String)
     }
 }
@@ -30,9 +31,13 @@ class UserUsecase: UserUsecaseInterface {
                 let decoder = JSONDecoder()
                 do {
                     let users = try decoder.decode([User].self, from: response.data)
-                    completion(.success(users))
-                } catch {
-                    
+                    if users.isEmpty {
+                        completion(.dataIncorrect)
+                    } else {
+                        completion(.success(users))
+                    }
+                } catch let error {
+                    completion(.error(error.localizedDescription))
                 }
             case .failure(let error):
                 completion(.error(error.localizedDescription))

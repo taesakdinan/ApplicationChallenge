@@ -12,6 +12,7 @@ import Parchment
 protocol UserInfoDisplayLogic: AnyObject {
     func displayLoading(viewModel: UserInfo.Loading.ViewModel)
     func displayAlert(viewModel: UserInfo.Alert.ViewModel)
+    func displayEmptyAlert(viewModel: UserInfo.Alert.ViewModel)
     func displayUsersInfo(viewModel: UserInfo.UserInfo.ViewModel)
     func closeApplication()
 }
@@ -84,6 +85,13 @@ extension UserInfoViewController: UserInfoDisplayLogic {
         }
         alert.addAction(close)
         alert.addAction(retry)
+        present(alert, animated: true)
+    }
+    
+    func displayEmptyAlert(viewModel: UserInfo.Alert.ViewModel) {
+        let alert = UIAlertController(title: viewModel.title, message: viewModel.message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(action)
         present(alert, animated: true)
     }
     
