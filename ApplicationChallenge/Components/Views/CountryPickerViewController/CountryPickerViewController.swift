@@ -16,17 +16,22 @@ final class CountryPickerViewController: UIViewController {
     @IBOutlet private weak var containerView: UIView!
     @IBOutlet private weak var bottomConstraint: NSLayoutConstraint!
     
-    var currentIndexSelected = 0
-    var onSelected: ((_ index: Int) -> Void)?
-    var dataList: [String] = [] {
+    private var currentIndexSelected = 0
+    private var onSelected: ((_ index: Int) -> Void)?
+    private var dataList: [String] = [] {
         didSet {
             pickerView?.reloadAllComponents()
         }
     }
     private var kAnimateDuration: TimeInterval { 0.33 }
     
-    class func instantiateViewController() -> CountryPickerViewController {
+    class func instantiateViewController(dataList: [String],
+                                         currentIndexSelected: Int,
+                                         onSelected: ((_ index: Int) -> Void)?) -> CountryPickerViewController {
         let dialogVC = CountryPickerViewController(nibName: "CountryPickerViewController", bundle: Bundle(for: Self.self))
+        dialogVC.currentIndexSelected = currentIndexSelected
+        dialogVC.dataList = dataList
+        dialogVC.onSelected = onSelected
         dialogVC.providesPresentationContextTransitionStyle = true
         dialogVC.definesPresentationContext = true
         dialogVC.modalPresentationStyle = .overCurrentContext

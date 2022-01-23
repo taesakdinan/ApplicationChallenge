@@ -19,11 +19,12 @@ final class UserInfoDetailViewController: UIViewController {
     @IBOutlet private weak var catchPhraseLabel: UILabel!
     @IBOutlet private weak var locationButton: UIButton!
     
-    var userInfo: User?
+    private var userInfo: User?
     
-    class func instantiateViewController() -> UserInfoDetailViewController {
+    class func instantiateViewController(userInfo: User) -> UserInfoDetailViewController {
         let storyboard = UIStoryboard(name: "UserInfoDetailViewController", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "UserInfoDetailViewController") as! UserInfoDetailViewController
+        vc.userInfo = userInfo
         return vc
     }
     

@@ -102,9 +102,7 @@ extension UserInfoViewController: PagingViewControllerDataSource {
     }
     
     func pagingViewController(_: PagingViewController, viewControllerAt index: Int) -> UIViewController {
-        let vc = UserInfoDetailViewController.instantiateViewController()
-        vc.userInfo = dataList[index]
-        return vc
+        UserInfoDetailViewController.instantiateViewController(userInfo: dataList[index])
     }
     
     func pagingViewController(_: PagingViewController, pagingItemAt index: Int) -> PagingItem {

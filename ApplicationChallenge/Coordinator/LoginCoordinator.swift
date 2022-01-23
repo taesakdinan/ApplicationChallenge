@@ -9,7 +9,7 @@
 import UIKit
 
 protocol LoginCoordinatable {
-    func showCountryPicker(currentIndex: Int, dataList: [String], onSelected: ((_ index: Int) -> Void)?)
+    func showCountryPicker(dataList: [String],currentIndexSelected: Int, onSelected: ((_ index: Int) -> Void)?)
     func showuserInfo()
 }
 
@@ -29,11 +29,10 @@ class LoginCoordinator: Coordinator {
 }
 
 extension LoginCoordinator: LoginCoordinatable {
-    func showCountryPicker(currentIndex: Int, dataList: [String], onSelected: ((_ index: Int) -> Void)?) {
-        let destinationVC = CountryPickerViewController.instantiateViewController()
-        destinationVC.dataList = dataList
-        destinationVC.onSelected = onSelected
-        destinationVC.currentIndexSelected = currentIndex
+    func showCountryPicker(dataList: [String],currentIndexSelected: Int, onSelected: ((_ index: Int) -> Void)?) {
+        let destinationVC = CountryPickerViewController.instantiateViewController(dataList: dataList,
+                                                                                  currentIndexSelected: currentIndexSelected,
+                                                                                  onSelected: onSelected)
         let newNav = UINavigationController()
         newNav.modalPresentationStyle = .overFullScreen
         newNav.pushViewController(destinationVC, animated: true)

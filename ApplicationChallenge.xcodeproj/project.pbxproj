@@ -36,10 +36,8 @@
 		4989BA81279C3B8A00B5310B /* UserUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA80279C3B8A00B5310B /* UserUsecase.swift */; };
 		4989BA89279C6B7C00B5310B /* Extension+UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989BA88279C6B7C00B5310B /* Extension+UIApplication.swift */; };
 		49C5B38A2799525100C1A8E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C5B3892799525100C1A8E0 /* AppDelegate.swift */; };
-		49C5B3912799525100C1A8E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49C5B38F2799525100C1A8E0 /* Main.storyboard */; };
 		49C5B3932799525300C1A8E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49C5B3922799525300C1A8E0 /* Assets.xcassets */; };
 		49C5B3962799525300C1A8E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49C5B3942799525300C1A8E0 /* LaunchScreen.storyboard */; };
-		49C5B3A12799525400C1A8E0 /* ApplicationChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C5B3A02799525400C1A8E0 /* ApplicationChallengeTests.swift */; };
 		49C5B3C12799548F00C1A8E0 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C5B3BB2799548F00C1A8E0 /* LoginPresenter.swift */; };
 		49C5B3C22799548F00C1A8E0 /* LoginWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C5B3BC2799548F00C1A8E0 /* LoginWorker.swift */; };
 		49C5B3C32799548F00C1A8E0 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C5B3BD2799548F00C1A8E0 /* LoginRouter.swift */; };
@@ -91,12 +89,10 @@
 		4989BA88279C6B7C00B5310B /* Extension+UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIApplication.swift"; sourceTree = "<group>"; };
 		49C5B3862799525100C1A8E0 /* ApplicationChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApplicationChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49C5B3892799525100C1A8E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		49C5B3902799525100C1A8E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49C5B3922799525300C1A8E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49C5B3952799525300C1A8E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49C5B3972799525300C1A8E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49C5B39C2799525400C1A8E0 /* ApplicationChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApplicationChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		49C5B3A02799525400C1A8E0 /* ApplicationChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationChallengeTests.swift; sourceTree = "<group>"; };
 		49C5B3BB2799548F00C1A8E0 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		49C5B3BC2799548F00C1A8E0 /* LoginWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWorker.swift; sourceTree = "<group>"; };
 		49C5B3BD2799548F00C1A8E0 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
@@ -186,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				4989BA46279BE94700B5310B /* Login */,
+				4989BA8A279C751E00B5310B /* UserInfo */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -252,6 +249,13 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		4989BA8A279C751E00B5310B /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UserInfo;
+			sourceTree = "<group>";
+		};
 		49C5B37D2799525100C1A8E0 = {
 			isa = PBXGroup;
 			children = (
@@ -279,7 +283,6 @@
 				49C5B3892799525100C1A8E0 /* AppDelegate.swift */,
 				49C5B3922799525300C1A8E0 /* Assets.xcassets */,
 				49C5B3942799525300C1A8E0 /* LaunchScreen.storyboard */,
-				49C5B38F2799525100C1A8E0 /* Main.storyboard */,
 				4989BA3B279BD23D00B5310B /* Configs */,
 				4989BA87279C6B3800B5310B /* Extension */,
 				4989BA3E279BE14300B5310B /* Entities */,
@@ -295,7 +298,6 @@
 		49C5B39F2799525400C1A8E0 /* ApplicationChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				49C5B3A02799525400C1A8E0 /* ApplicationChallengeTests.swift */,
 				4989BA45279BE93800B5310B /* Scenes */,
 			);
 			path = ApplicationChallengeTests;
@@ -435,7 +437,6 @@
 				4989BA6C279C092C00B5310B /* Login.storyboard in Resources */,
 				4989BA3A279B193700B5310B /* CountryPickerViewController.xib in Resources */,
 				49C5B3932799525300C1A8E0 /* Assets.xcassets in Resources */,
-				49C5B3912799525100C1A8E0 /* Main.storyboard in Resources */,
 				4989BA79279C27B900B5310B /* UserInfoDetailViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -555,7 +556,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4989BA4C279BE95A00B5310B /* LoginInteractorTests.swift in Sources */,
-				49C5B3A12799525400C1A8E0 /* ApplicationChallengeTests.swift in Sources */,
 				4989BA4E279BE95A00B5310B /* LoginPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -571,14 +571,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		49C5B38F2799525100C1A8E0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				49C5B3902799525100C1A8E0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		49C5B3942799525300C1A8E0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
